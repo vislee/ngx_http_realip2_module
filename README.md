@@ -28,8 +28,8 @@ Install
 configure --prefix=/usr/local/nginx --add-module=./github.com/vislee/ngx_http_realip2_module
 make -j 4
 
-install -d lualib/resty/
-install realip.lua lualib/resty/
+install -d ${prefix}/lualib/resty/
+install realip.lua ${prefix}/lualib/resty/
 
 ```
 
@@ -38,7 +38,7 @@ Synopsis
 ====================
 
 ```nginx
-lua_package_path "/path/to/lua-resty-redis/lib/?.lua;;";
+lua_package_path "${prefix}/lualib/resty/?.lua;;";
 
 server {
      location /test {
