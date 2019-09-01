@@ -1,0 +1,167 @@
+2019/09/01 11:49:21 [debug] 56325#0: bind() 0.0.0.0:1984 #6 
+2019/09/01 11:49:21 [notice] 56325#0: using the "kqueue" event method
+2019/09/01 11:49:21 [notice] 56325#0: openresty/1.13.6.1
+2019/09/01 11:49:21 [notice] 56325#0: built by clang 10.0.0 (clang-1000.11.45.5)
+2019/09/01 11:49:21 [notice] 56325#0: OS: Darwin 17.7.0
+2019/09/01 11:49:21 [notice] 56325#0: hw.ncpu: 8
+2019/09/01 11:49:21 [notice] 56325#0: net.inet.tcp.sendspace: 131072
+2019/09/01 11:49:21 [notice] 56325#0: kern.ipc.somaxconn: 128
+2019/09/01 11:49:21 [notice] 56325#0: getrlimit(RLIMIT_NOFILE): 4864:9223372036854775807
+2019/09/01 11:49:21 [debug] 56327#0: write: 7, 00007FFEE326B2E0, 6, 0
+2019/09/01 11:49:21 [debug] 56327#0: add cleanup: 00007F9B5D82BCF0
+2019/09/01 11:49:21 [debug] 56327#0: malloc: 00007F9B5C71A9D0:8
+2019/09/01 11:49:21 [debug] 56327#0: malloc: 00007F9B5D80C400:16384
+2019/09/01 11:49:21 [debug] 56327#0: malloc: 00007F9B5D82FC00:16384
+2019/09/01 11:49:21 [debug] 56327#0: malloc: 00007F9B5D833C00:14848
+2019/09/01 11:49:21 [debug] 56327#0: malloc: 00007F9B5D815400:6656
+2019/09/01 11:49:21 [debug] 56327#0: malloc: 00007F9B5D816E00:6656
+2019/09/01 11:49:21 [debug] 56327#0: kevent set event: 6: ft:-1 fl:0005
+2019/09/01 11:49:21 [debug] 56327#0: worker cycle
+2019/09/01 11:49:21 [debug] 56327#0: kevent timer: -1, changes: 1
+2019/09/01 11:49:21 [debug] 56327#0: kevent events: 1
+2019/09/01 11:49:21 [debug] 56327#0: kevent: 6: ft:-1 fl:0005 ff:00000000 d:1 ud:00007F9B5D815400
+2019/09/01 11:49:21 [debug] 56327#0: accept on 0.0.0.0:1984, ready: 1
+2019/09/01 11:49:21 [debug] 56327#0: posix_memalign: 00007F9B5C501810:512 @16
+2019/09/01 11:49:21 [debug] 56327#0: *1 accept: 127.0.0.1:51196 fd:7
+2019/09/01 11:49:21 [debug] 56327#0: *1 event timer add: 7: 60000:1567309821640
+2019/09/01 11:49:21 [debug] 56327#0: *1 reusable connection: 1
+2019/09/01 11:49:21 [debug] 56327#0: *1 kevent set event: 7: ft:-1 fl:0025
+2019/09/01 11:49:21 [debug] 56327#0: timer delta: 27
+2019/09/01 11:49:21 [debug] 56327#0: worker cycle
+2019/09/01 11:49:21 [debug] 56327#0: kevent timer: 60000, changes: 1
+2019/09/01 11:49:21 [debug] 56327#0: kevent events: 1
+2019/09/01 11:49:21 [debug] 56327#0: kevent: 7: ft:-1 fl:0025 ff:00000000 d:55 ud:00007F9B5D815468
+2019/09/01 11:49:21 [debug] 56327#0: *1 http wait request handler
+2019/09/01 11:49:21 [debug] 56327#0: *1 malloc: 00007F9B5D000000:1024
+2019/09/01 11:49:21 [debug] 56327#0: *1 recv: eof:0, avail:55, err:0
+2019/09/01 11:49:21 [debug] 56327#0: *1 recv: fd:7 55 of 1024
+2019/09/01 11:49:21 [debug] 56327#0: *1 reusable connection: 0
+2019/09/01 11:49:21 [debug] 56327#0: *1 posix_memalign: 00007F9B5D000400:4096 @16
+2019/09/01 11:49:21 [debug] 56327#0: *1 http process request line
+2019/09/01 11:49:21 [debug] 56327#0: *1 http request line: "GET /t HTTP/1.1"
+2019/09/01 11:49:21 [debug] 56327#0: *1 http uri: "/t"
+2019/09/01 11:49:21 [debug] 56327#0: *1 http args: ""
+2019/09/01 11:49:21 [debug] 56327#0: *1 http exten: ""
+2019/09/01 11:49:21 [debug] 56327#0: *1 posix_memalign: 00007F9B5D001400:4096 @16
+2019/09/01 11:49:21 [debug] 56327#0: *1 http process request header line
+2019/09/01 11:49:21 [debug] 56327#0: *1 http header: "Host: localhost"
+2019/09/01 11:49:21 [debug] 56327#0: *1 http header: "Connection: close"
+2019/09/01 11:49:21 [debug] 56327#0: *1 http header done
+2019/09/01 11:49:21 [debug] 56327#0: *1 event timer del: 7: 1567309821640
+2019/09/01 11:49:21 [debug] 56327#0: *1 generic phase: 0
+2019/09/01 11:49:21 [debug] 56327#0: *1 rewrite phase: 1
+2019/09/01 11:49:21 [debug] 56327#0: *1 rewrite phase: 2
+2019/09/01 11:49:21 [debug] 56327#0: *1 test location: "/"
+2019/09/01 11:49:21 [debug] 56327#0: *1 test location: "t"
+2019/09/01 11:49:21 [debug] 56327#0: *1 using configuration "/t"
+2019/09/01 11:49:21 [debug] 56327#0: *1 http cl:-1 max:31457280
+2019/09/01 11:49:21 [debug] 56327#0: *1 rewrite phase: 4
+2019/09/01 11:49:21 [debug] 56327#0: *1 rewrite phase: 5
+2019/09/01 11:49:21 [debug] 56327#0: *1 post rewrite phase: 6
+2019/09/01 11:49:21 [debug] 56327#0: *1 generic phase: 7
+2019/09/01 11:49:21 [debug] 56327#0: *1 generic phase: 8
+2019/09/01 11:49:21 [debug] 56327#0: *1 generic phase: 9
+2019/09/01 11:49:21 [debug] 56327#0: *1 access phase: 10
+2019/09/01 11:49:21 [debug] 56327#0: *1 access phase: 11
+2019/09/01 11:49:21 [debug] 56327#0: *1 post access phase: 12
+2019/09/01 11:49:21 [debug] 56327#0: *1 generic phase: 13
+2019/09/01 11:49:21 [debug] 56327#0: *1 generic phase: 14
+2019/09/01 11:49:21 [debug] 56327#0: *1 lua content handler, uri:"/t" c:1
+2019/09/01 11:49:21 [debug] 56327#0: *1 lua reset ctx
+2019/09/01 11:49:21 [debug] 56327#0: *1 lua creating new thread
+2019/09/01 11:49:21 [debug] 56327#0: *1 http cleanup add: 00007F9B5D001290
+2019/09/01 11:49:21 [debug] 56327#0: *1 lua run thread, top:0 c:1
+2019/09/01 11:49:21 [debug] 56327#0: *1 lua allocate new chainlink and new buf of size 10, cl:00007F9B5D0012A8
+2019/09/01 11:49:21 [debug] 56327#0: *1 lua say response
+2019/09/01 11:49:21 [debug] 56327#0: *1 lua capture header filter, uri "/t"
+2019/09/01 11:49:21 [debug] 56327#0: *1 HTTP/1.1 200 OK
+Server: openresty/1.13.6.1
+Date: Sun, 01 Sep 2019 03:49:21 GMT
+Content-Type: text/plain
+Transfer-Encoding: chunked
+Connection: close
+
+2019/09/01 11:49:21 [debug] 56327#0: *1 write new buf t:1 f:0 00007F9B5D0017E0, pos 00007F9B5D0017E0, size: 157 file: 0, size: 0
+2019/09/01 11:49:21 [debug] 56327#0: *1 http write filter: l:0 f:0 s:157
+2019/09/01 11:49:21 [debug] 56327#0: *1 http output filter "/t?"
+2019/09/01 11:49:21 [debug] 56327#0: *1 http copy filter: "/t?"
+2019/09/01 11:49:21 [debug] 56327#0: *1 lua capture body filter, uri "/t"
+2019/09/01 11:49:21 [debug] 56327#0: *1 http postpone filter "/t?" 00007F9B5D0012A8
+2019/09/01 11:49:21 [debug] 56327#0: *1 http chunk: 10
+2019/09/01 11:49:21 [debug] 56327#0: *1 write old buf t:1 f:0 00007F9B5D0017E0, pos 00007F9B5D0017E0, size: 157 file: 0, size: 0
+2019/09/01 11:49:21 [debug] 56327#0: *1 write new buf t:1 f:0 00007F9B5D0018E0, pos 00007F9B5D0018E0, size: 3 file: 0, size: 0
+2019/09/01 11:49:21 [debug] 56327#0: *1 write new buf t:1 f:0 00007F9B5D001308, pos 00007F9B5D001308, size: 10 file: 0, size: 0
+2019/09/01 11:49:21 [debug] 56327#0: *1 write new buf t:0 f:0 0000000000000000, pos 000000010CADAE68, size: 2 file: 0, size: 0
+2019/09/01 11:49:21 [debug] 56327#0: *1 http write filter: l:0 f:0 s:172
+2019/09/01 11:49:21 [debug] 56327#0: *1 http copy filter: 0 "/t?"
+2019/09/01 11:49:21 [debug] 56327#0: *1 lua exit with code 200
+2019/09/01 11:49:21 [debug] 56327#0: *1 lua resume returned 1
+2019/09/01 11:49:21 [debug] 56327#0: *1 lua thread yielded
+2019/09/01 11:49:21 [debug] 56327#0: *1 lua thread aborting request with status 200
+2019/09/01 11:49:21 [debug] 56327#0: *1 lua request cleanup: forcible=0
+2019/09/01 11:49:21 [debug] 56327#0: *1 http set discard body
+2019/09/01 11:49:21 [debug] 56327#0: *1 lua sending last buf of the response body
+2019/09/01 11:49:21 [debug] 56327#0: *1 http output filter "/t?"
+2019/09/01 11:49:21 [debug] 56327#0: *1 http copy filter: "/t?"
+2019/09/01 11:49:21 [debug] 56327#0: *1 lua capture body filter, uri "/t"
+2019/09/01 11:49:21 [debug] 56327#0: *1 http postpone filter "/t?" 00007FFEE326AF90
+2019/09/01 11:49:21 [debug] 56327#0: *1 http chunk: 0
+2019/09/01 11:49:21 [debug] 56327#0: *1 write old buf t:1 f:0 00007F9B5D0017E0, pos 00007F9B5D0017E0, size: 157 file: 0, size: 0
+2019/09/01 11:49:21 [debug] 56327#0: *1 write old buf t:1 f:0 00007F9B5D0018E0, pos 00007F9B5D0018E0, size: 3 file: 0, size: 0
+2019/09/01 11:49:21 [debug] 56327#0: *1 write old buf t:1 f:0 00007F9B5D001308, pos 00007F9B5D001308, size: 10 file: 0, size: 0
+2019/09/01 11:49:21 [debug] 56327#0: *1 write old buf t:0 f:0 0000000000000000, pos 000000010CADAE68, size: 2 file: 0, size: 0
+2019/09/01 11:49:21 [debug] 56327#0: *1 write new buf t:0 f:0 0000000000000000, pos 000000010CADB5AE, size: 5 file: 0, size: 0
+2019/09/01 11:49:21 [debug] 56327#0: *1 http write filter: l:1 f:0 s:177
+2019/09/01 11:49:21 [debug] 56327#0: *1 http write filter limit 0
+2019/09/01 11:49:21 [debug] 56327#0: *1 writev: 177 of 177
+2019/09/01 11:49:21 [debug] 56327#0: *1 http write filter 0000000000000000
+2019/09/01 11:49:21 [debug] 56327#0: *1 http copy filter: 0 "/t?"
+2019/09/01 11:49:21 [debug] 56327#0: *1 http finalize request: 0, "/t?" a:1, c:1
+2019/09/01 11:49:21 [debug] 56327#0: *1 http request count:1 blk:0
+2019/09/01 11:49:21 [debug] 56327#0: *1 http close request
+2019/09/01 11:49:21 [debug] 56327#0: *1 http log handler
+2019/09/01 11:49:21 [debug] 56327#0: *1 free: 00007F9B5D000400, unused: 0
+2019/09/01 11:49:21 [debug] 56327#0: *1 free: 00007F9B5D001400, unused: 2377
+2019/09/01 11:49:21 [debug] 56327#0: *1 close http connection: 7
+2019/09/01 11:49:21 [debug] 56327#0: *1 reusable connection: 0
+2019/09/01 11:49:21 [debug] 56327#0: *1 free: 00007F9B5D000000
+2019/09/01 11:49:21 [debug] 56327#0: *1 free: 00007F9B5C501810, unused: 136
+2019/09/01 11:49:21 [debug] 56327#0: timer delta: 1
+2019/09/01 11:49:21 [debug] 56327#0: worker cycle
+2019/09/01 11:49:21 [debug] 56327#0: kevent timer: -1, changes: 0
+2019/09/01 11:49:21 [notice] 56327#0: signal 15 (SIGTERM) received from 56295, exiting
+2019/09/01 11:49:21 [notice] 56327#0: signal 3 (SIGQUIT) received from 56295, shutting down
+2019/09/01 11:49:21 [debug] 56327#0: kevent events: -1
+2019/09/01 11:49:21 [info] 56327#0: kevent() failed (4: Interrupted system call)
+2019/09/01 11:49:21 [debug] 56327#0: timer delta: 49
+2019/09/01 11:49:21 [notice] 56327#0: exiting
+2019/09/01 11:49:21 [debug] 56327#0: flush files
+2019/09/01 11:49:21 [notice] 56327#0: exit
+2019/09/01 11:49:21 [debug] 56327#0: close listening 0.0.0.0:1984 #6 
+2019/09/01 11:49:21 [debug] 56327#0: run cleanup: 00007F9B5D82BCF0
+2019/09/01 11:49:21 [debug] 56327#0: run cleanup: 00007F9B5D82B720
+2019/09/01 11:49:21 [debug] 56327#0: lua decrementing the reference count for Lua VM: 1
+2019/09/01 11:49:21 [debug] 56327#0: lua close the global Lua VM 000000000CC7F378
+2019/09/01 11:49:21 [debug] 56327#0: run cleanup: 00007F9B5D82B708
+2019/09/01 11:49:21 [debug] 56327#0: run cleanup: 00007F9B5D82B6F0
+2019/09/01 11:49:21 [debug] 56327#0: run cleanup: 00007F9B5D828FE8
+2019/09/01 11:49:21 [debug] 56327#0: run cleanup: 00007F9B5D828FB8
+2019/09/01 11:49:21 [debug] 56327#0: run cleanup: 00007F9B5D828F88
+2019/09/01 11:49:21 [debug] 56327#0: run cleanup: 00007F9B5D826B80
+2019/09/01 11:49:21 [debug] 56327#0: cleanup resolver
+2019/09/01 11:49:21 [debug] 56327#0: run cleanup: 00007F9B5D812B68
+2019/09/01 11:49:21 [debug] 56327#0: run cleanup: 00007F9B5D8127B0
+2019/09/01 11:49:21 [debug] 56327#0: run cleanup: 00007F9B5D80BE78
+2019/09/01 11:49:21 [debug] 56327#0: free: 00007F9B5D012000
+2019/09/01 11:49:21 [debug] 56327#0: free: 00007F9B5D010800
+2019/09/01 11:49:21 [debug] 56327#0: free: 00007F9B5D802400
+2019/09/01 11:49:21 [debug] 56327#0: free: 00007F9B5D820000
+2019/09/01 11:49:21 [debug] 56327#0: free: 00007F9B5D81AE00
+2019/09/01 11:49:21 [debug] 56327#0: free: 00007F9B5D819C00
+2019/09/01 11:49:21 [debug] 56327#0: free: 00007F9B5D818A00
+2019/09/01 11:49:21 [debug] 56327#0: free: 00007F9B5D808400, unused: 0
+2019/09/01 11:49:21 [debug] 56327#0: free: 00007F9B5D811400, unused: 0
+2019/09/01 11:49:21 [debug] 56327#0: free: 00007F9B5D81C000, unused: 0
+2019/09/01 11:49:21 [debug] 56327#0: free: 00007F9B5D821000, unused: 0
+2019/09/01 11:49:21 [debug] 56327#0: free: 00007F9B5D825000, unused: 0
+2019/09/01 11:49:21 [debug] 56327#0: free: 00007F9B5D82A400, unused: 9976

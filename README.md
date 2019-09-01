@@ -29,7 +29,7 @@ configure --prefix=/usr/local/nginx --add-module=./github.com/vislee/ngx_http_re
 make -j 4
 
 install -d ${prefix}/lualib/resty/
-install realip.lua ${prefix}/lualib/resty/
+install lib/resty/realip.lua ${prefix}/lualib/resty/
 
 ```
 
