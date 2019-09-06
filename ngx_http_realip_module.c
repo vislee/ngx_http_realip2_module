@@ -346,6 +346,20 @@ ngx_http_lua_ffi_realip_set_addr(ngx_http_request_t *r,
 
     return NGX_OK;
 }
+
+int
+ngx_http_lua_ffi_realip_get_addr(ngx_http_request_t *r, ngx_str_t *addr,
+    char **errmsg)
+{
+    if (r->connection == NULL || r->connection->addr_text.len == 0) {
+        *errmsg = "failed to realip_get_addr";
+        return NGX_ERROR;
+    }
+
+    *addr = r->connection->addr_text;
+
+    return NGX_OK;
+}
 #endif
 
 
