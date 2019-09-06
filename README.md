@@ -9,6 +9,9 @@ Table of Contents
 * [Status](#status)
 * [Install](#install)
 * [Synopsis](#synopsis)
+* [Methods](#methods)
+	* [set_remote_addr](#set_remote_addr)
+	* [get_remote_addr](#get_remote_addr)
 * [Author](#author)
 * [See Also](#see-also)
 
@@ -44,13 +47,44 @@ server {
      location /test {
          content_by_lua_block {
              local realip = require "resty.realip"
-             realip.set_addr("192.168.0.1")
+
+             if ngx.var.remote_addr == "127.0.0.1" then
+                 realip.set_remote_addr("10.11.12.13")
+             end
+
+             ngx.print(ngx.var.remote_addr, " ", realip.get_remote_addr())
+             ngx.exit(ngx.HTTP_OK)
          }
      }
 }
 
 ```
 
+
+Methods
+=======
+
+set_remote_addr
+---------------
+**syntax:** *realip.set_remote_addr(addr)*
+**context:** *rewrite_by_lua\*,access_by_lua\*,content_by_lua\*,header_filter_by_lua\*,body_filter_by_lua\** 
+
+Set the client address.
+
+get_remote_addr
+---------------
+**syntax:** *addr, err = realip.get_remote_addr()*
+**context:** *rewrite_by_lua\*,access_by_lua\*,content_by_lua\*,header_filter_by_lua\*,body_filter_by_lua\** 
+
+Get the client address.
+
+In case of error, `nil` will be returned as well as a string describing the error.
+
+
+*NOTE:*  The `ngx.var.remote_addr` will be cached. So the `ngx.var.remote_addr` maybe not changed after `realip.set_remote_addr(addr)`. You can use `realip.get_remote_addr()`.
+
+
+[Back to TOC](#table-of-contents)
 
 Author
 ======
