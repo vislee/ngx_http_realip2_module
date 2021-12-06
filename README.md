@@ -67,6 +67,7 @@ Methods
 set_remote_addr
 ---------------
 **syntax:** *realip.set_remote_addr(addr)*
+
 **context:** *rewrite_by_lua\*,access_by_lua\*,content_by_lua\*,header_filter_by_lua\*,body_filter_by_lua\** 
 
 Set the client address.
@@ -74,6 +75,7 @@ Set the client address.
 get_remote_addr
 ---------------
 **syntax:** *addr, err = realip.get_remote_addr()*
+
 **context:** *rewrite_by_lua\*,access_by_lua\*,content_by_lua\*,header_filter_by_lua\*,body_filter_by_lua\** 
 
 Get the client address.
