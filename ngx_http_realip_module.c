@@ -359,6 +359,24 @@ ngx_http_lua_ffi_realip_get_addr(ngx_http_request_t *r, ngx_str_t *addr,
 
     return NGX_OK;
 }
+
+int
+ngx_http_lua_ffi_get_proxy_protocol_addr(ngx_http_request_t *r,
+    ngx_str_t *src_addr, ngx_str_t *dst_addr,
+    in_port_t *src_port, in_port_t *dst_port, char **errmsg)
+{
+    if (r->connection == NULL || r->connection->proxy_protocol == NULL) {
+        *errmsg = "failed to get_proxy_protocol_addr";
+        return NGX_ERROR;
+    }
+
+    *src_addr = r->connection->proxy_protocol->src_addr;
+    *dst_addr = r->connection->proxy_protocol->dst_addr;
+    *src_port = r->connection->proxy_protocol->src_port;
+    *dst_port = r->connection->proxy_protocol->dst_port;
+
+    return NGX_OK;
+}
 #endif
 
 

@@ -4,19 +4,24 @@ local ffi = require 'ffi'
 local base = require("resty.core.base")
 base.allows_subsystem('http')
 
+local tonumber = tonumber
 local C = ffi.C
 local ffi_new = ffi.new
 local ffi_str = ffi.string
 
 
 local _M = {}
-_M.version = "0.01"
+_M.version = "0.02"
 
 ffi.cdef[[
+    typedef unsigned short u_short;
     int ngx_http_lua_ffi_realip_set_addr(ngx_http_request_t *r,
         const char *ip, size_t len, char **errmsg);
     int ngx_http_lua_ffi_realip_get_addr(ngx_http_request_t *r, ngx_str_t *addr,
         char **errmsg);
+    int ngx_http_lua_ffi_get_proxy_protocol_addr(ngx_http_request_t *r,
+    ngx_str_t *src_addr, ngx_str_t *dst_addr,
+    u_short *src_port, u_short *dst_port, char **errmsg);
 ]]
 
 if not pcall(ffi.typeof, "ngx_str_t") then
@@ -95,5 +100,40 @@ local function realip_get_remote_addr()
 end
 
 _M.get_remote_addr = realip_get_remote_addr
+
+
+local function get_proxy_protocol_addr()
+    local r = get_request()
+
+    if not r then
+        return nil, "no request found"
+    end
+
+    local src_addr_str_t = ffi_new("ngx_str_t[1]")
+    local dst_addr_str_t = ffi_new("ngx_str_t[1]")
+    local src_ushort = ffi_new("u_short[1]")
+    local dst_ushort = ffi_new("u_short[1]")
+
+    local rc
+    rc = C.ngx_http_lua_ffi_get_proxy_protocol_addr(r, src_addr_str_t, dst_addr_str_t, src_ushort, dst_ushort, errmsg)
+
+    if rc ~= 0 then
+        return nil, ffi_str(errmsg[0])
+    end
+
+    local src_addr = src_addr_str_t[0]
+    local dst_addr = dst_addr_str_t[0]
+    local src_port = src_ushort[0]
+    local dst_port = dst_ushort[0]
+
+    return {
+        src_addr = ffi_str(src_addr.data, src_addr.len),
+        dst_addr = ffi_str(dst_addr.data, dst_addr.len),
+        src_port = tonumber(src_port),
+        dst_port = tonumber(dst_port)
+    }
+end
+
+_M.get_proxy_protocol_addr = get_proxy_protocol_addr
 
 return _M
